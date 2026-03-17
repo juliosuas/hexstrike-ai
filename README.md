@@ -13,9 +13,10 @@
 [![Tools](https://img.shields.io/badge/Security%20Tools-150%2B-brightgreen.svg)](https://github.com/0x4m4/hexstrike-ai)
 [![Agents](https://img.shields.io/badge/AI%20Agents-12%2B-purple.svg)](https://github.com/0x4m4/hexstrike-ai)
 [![Stars](https://img.shields.io/github/stars/0x4m4/hexstrike-ai?style=social)](https://github.com/0x4m4/hexstrike-ai)
+[![AgentSkills](https://img.shields.io/badge/AgentSkills.io-Compatible-blueviolet.svg)](skills/)
 
 **Turn any MCP-compatible AI into a full-spectrum penetration testing machine.**  
-150+ security tools. 12+ autonomous agents. One unified platform.
+150+ security tools. 12+ autonomous agents. 7 agentskills.io skills. One unified platform.
 
 [⚡ Quick Start](#-quick-start) • [🏗️ Architecture](#architecture-overview) • [🛠️ Features](#features) • [🤖 AI Agents](#ai-agents) • [📡 API Reference](#api-reference) • [🗺️ Roadmap](#-roadmap)
 
@@ -576,6 +577,72 @@ vulnerability scanning and web application testing..."
 | Status | `GET /api/processes/status/<pid>` | Detailed process info |
 | Terminate | `POST /api/processes/terminate/<pid>` | Stop a process |
 | Dashboard | `GET /api/processes/dashboard` | Live monitoring dashboard |
+
+---
+
+## 🧩 AgentSkills.io Compatible Skills
+
+HexStrike AI ships with **7 original cybersecurity skills** in the [agentskills.io](https://agentskills.io) standard format. Each skill uses YAML frontmatter for progressive discovery — AI agents read ~50 tokens of metadata to decide relevance, then load the full body on demand.
+
+Browse the full catalog in [`skills/`](skills/).
+
+| Skill | Category | Description |
+|-------|----------|-------------|
+| [MCP Recon Orchestrator](skills/mcp-recon-orchestrator/) | Reconnaissance | Parallel multi-tool recon via MCP with real-time result correlation |
+| [Attack Surface Monitor](skills/autonomous-attack-surface-monitor/) | Monitoring | Continuous baseline-drift detection for external attack surfaces |
+| [Vulnerability Chain Discovery](skills/ai-vulnerability-chain-discovery/) | Analysis | AI-driven multi-step attack chain identification from correlated findings |
+| [Credential Audit Pipeline](skills/mcp-credential-audit-pipeline/) | Authentication | Lockout-aware, cross-service credential testing orchestration |
+| [Threat Correlation](skills/realtime-threat-correlation/) | Threat Intel | Enrich findings with live threat intelligence for risk-weighted prioritization |
+| [Cloud Posture Scanner](skills/ai-cloud-posture-scanner/) | Cloud Security | Multi-cloud misconfiguration detection with AI exploitation reasoning |
+| [Social Engineering Analyzer](skills/mcp-social-engineering-analyzer/) | OSINT | Map organizational phishing and impersonation risk from public data |
+
+**What makes these unique:** Every skill leverages MCP multi-tool orchestration — capabilities that don't exist in traditional skill catalogs. The AI agent coordinates 5-10 tools simultaneously, shares context between them, and makes autonomous decisions about what to investigate next.
+
+---
+
+## 🖥️ Platform Compatibility
+
+| Platform | Architecture | Status | Notes |
+|----------|-------------|--------|-------|
+| Ubuntu 22.04+ | x86_64, ARM64 | ✅ Full | Recommended platform |
+| Debian 12+ | x86_64, ARM64 | ✅ Full | Fully tested |
+| Kali Linux | x86_64 | ✅ Full | Most tools pre-installed |
+| Parrot OS | x86_64 | ✅ Full | Security tools included |
+| macOS 13+ | ARM64 (Apple Silicon) | ✅ Full | Homebrew for tool installation |
+| macOS 13+ | x86_64 (Intel) | ✅ Full | Homebrew for tool installation |
+| Windows 11 | x86_64 (WSL2) | ⚠️ Partial | WSL2 with Ubuntu recommended |
+| Arch Linux | x86_64 | ✅ Full | AUR packages available |
+| Fedora 38+ | x86_64 | ✅ Full | Community tested |
+| Docker | Any | ✅ Full | Isolated environment |
+| Kubernetes | Any | ⚠️ Partial | Helm chart planned |
+
+### AI Client Compatibility
+
+| Client | MCP Support | Tool Limit | Status |
+|--------|------------|------------|--------|
+| Claude Desktop | Native | Unlimited | ✅ Fully tested |
+| VS Code Copilot | Extension | Unlimited | ✅ Fully tested |
+| Cursor | Built-in | Unlimited | ✅ Fully tested |
+| Roo Code | Built-in | Unlimited | ✅ Fully tested |
+| OpenAI Agents | Via bridge | Varies | ⚠️ Community supported |
+| LangChain | MCP adapter | Unlimited | ⚠️ Community supported |
+| Custom FastMCP | Native | Unlimited | ✅ Full API access |
+
+---
+
+## ✅ Verification & Success Criteria
+
+Every HexStrike operation includes built-in verification steps. After any assessment, confirm:
+
+| Check | How to Verify | Expected Result |
+|-------|--------------|-----------------|
+| Server Health | `curl http://localhost:8888/health` | 200 OK with tool inventory |
+| MCP Connection | Agent successfully lists available tools | 150+ tools visible |
+| Tool Execution | Run a basic `nmap_scan` against authorized target | Scan completes with results |
+| Agent Reasoning | Agent explains tool selection rationale | Contextual reasoning visible |
+| Result Correlation | Findings reference data from multiple tools | Cross-tool evidence chains |
+| Report Generation | Request assessment report | Structured output with severity ratings |
+| Cache Performance | `curl http://localhost:8888/api/cache/stats` | Hit rate >0 on repeated scans |
 
 ---
 
