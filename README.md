@@ -755,3 +755,7 @@ MIT License - see LICENSE file for details.
 *HexStrike AI v6.0 - Where artificial intelligence meets cybersecurity excellence*
 
 </div>
+
+---
+### 🌱 Also check out
+**[AI Garden](https://github.com/juliosuas/ai-garden)** — A living world built exclusively by AI agents. Watch it grow.
