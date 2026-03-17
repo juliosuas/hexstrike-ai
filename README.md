@@ -860,3 +860,27 @@ MIT License — see [LICENSE](LICENSE) for details.
 ---
 ### 🌱 Also check out
 **[AI Garden](https://github.com/juliosuas/ai-garden)** — A living world built exclusively by AI agents. Watch it grow.
+
+---
+
+## 🔌 Skills & Agent Compatibility
+
+HexStrike AI follows the [agentskills.io](https://agentskills.io) open standard. All skills in `skills/` work with:
+
+| Platform | Integration | Status |
+|----------|-------------|--------|
+| Claude Code | Native skill loading via `/plugin` | ✅ Supported |
+| GitHub Copilot | Workspace context via `.skills/` directory | ✅ Supported |
+| OpenAI Codex CLI | File-based context injection | ✅ Supported |
+| Cursor | Project rules and docs integration | ✅ Supported |
+| Gemini CLI | Context file loading | ✅ Supported |
+| Windsurf | Context awareness from project files | ✅ Supported |
+| Aider | Repository map integration | ✅ Supported |
+| Any MCP Client | Direct MCP protocol connection | ✅ Native |
+
+### Install Skills
+
+```bash
+npx skills add juliosuas/hexstrike-ai
+```
+

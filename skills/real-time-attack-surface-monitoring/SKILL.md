@@ -1,81 +1,37 @@
 ---
 name: real-time-attack-surface-monitoring
-description: Continuous monitoring of external attack surfaces with baseline drift detection, change alerting, and AI-driven risk assessment of new exposures
+description: Continuously monitor external attack surface for new exposures, misconfigurations, expiring certificates, and emerging vulnerabilities using HexStrike MCP agents with automated alerting.
 domain: cybersecurity
-subdomain: monitoring
-tags:
-  - attack-surface
-  - monitoring
-  - continuous
-  - drift-detection
-  - real-time
-  - exposure-management
-version: 1.0.0
-author: HexStrike AI
+subdomain: vulnerability-management
+tags: [attack-surface, monitoring, continuous, real-time, exposure-management, certificates]
+version: "1.0"
+author: juliosuas
+license: MIT
 ---
 
 # Real-Time Attack Surface Monitoring
 
-Continuous, AI-powered monitoring of your external attack surface. Establishes a baseline of known assets, services, and configurations — then detects and risk-scores any drift in real time. New subdomain appeared? Port opened? TLS certificate changed? The AI evaluates the security implications and alerts with context, not just noise.
+## When to Use
+- Ongoing security monitoring between formal assessments
+- Detecting shadow IT and unauthorized services
+- Certificate expiry monitoring
+- New CVE impact assessment against known infrastructure
 
-## Why This Exists
+## Prerequisites
+- HexStrike AI deployed with monitoring agents
+- Baseline attack surface scan completed
+- Notification channels configured (Slack, email, webhook)
 
-Attack surfaces change constantly — new deployments, cloud instances, forgotten subdomains, shadow IT. Point-in-time assessments miss changes that happen between scans. This skill provides persistent visibility with intelligent alerting that distinguishes routine changes from genuine security risks.
-
-## Capabilities
-
-- **Baseline Establishment** — Comprehensive initial scan creates a fingerprint of the entire external surface
-- **Continuous Drift Detection** — Periodic re-scans compared against baseline to detect changes
-- **AI Risk Scoring** — Every change is evaluated by the AI for security impact (not just "something changed")
-- **Change Classification** — Categorizes changes: new asset, removed asset, service change, config drift, certificate rotation
-- **Alert Prioritization** — High-risk changes (new admin panels, exposed databases, cert expirations) surface immediately; routine changes are logged silently
-- **Historical Trend Analysis** — Track attack surface growth/shrinkage over time
-
-## Monitoring Vectors
-
-```
-Continuous Checks:
-  ├── Subdomain enumeration (new/removed domains)
-  ├── Port/service monitoring (opened/closed/changed)
-  ├── TLS certificate tracking (expiry, issuer changes, SANs)
-  ├── HTTP response fingerprinting (tech stack changes)
-  ├── DNS record monitoring (A, CNAME, MX, TXT changes)
-  ├── Cloud asset discovery (new IPs, buckets, endpoints)
-  └── Content change detection (login pages, error messages)
-
-AI Risk Assessment per Change:
-  ├── Is this an authorized change? (correlate with change windows)
-  ├── Does this increase attack surface? (new exposure = higher risk)
-  ├── Does this introduce known vulnerabilities? (version → CVE lookup)
-  ├── Is this consistent with the organization's tech stack?
-  └── Severity: Critical / High / Medium / Low / Informational
-```
-
-## Example Alert
-
-```
-🔴 CRITICAL CHANGE DETECTED
-  Asset: staging-api.target.com
-  Change: New port 27017 (MongoDB) exposed to internet
-  Previous: Not in baseline
-  Risk: Unauthenticated MongoDB access possible
-  AI Assessment: "This MongoDB instance was not previously exposed. 
-    Default MongoDB installations allow unauthenticated access. 
-    Combined with the staging environment context, this likely 
-    contains test data that may mirror production schemas."
-  Recommended Action: Verify authentication, check for data exposure
-```
-
-## Key Differentiator
-
-Traditional attack surface monitoring tools generate noise — "port 443 still open" is not actionable. This skill uses AI to evaluate **security significance** of every change. The agent understands that a new MongoDB port on a staging server is critical, while a routine certificate renewal is informational. Context-aware alerting, not checkbox scanning.
+## Workflow
+1. Import baseline asset inventory from initial reconnaissance
+2. Configure monitoring frequency per asset criticality
+3. Agents continuously poll: DNS changes, new ports, certificate status, CVE feeds
+4. Delta analysis: compare current state vs baseline
+5. AI classifies changes: benign (planned) vs suspicious (shadow IT, compromise)
+6. Automated alerts for critical exposures with remediation suggestions
+7. Weekly attack surface drift report generated
 
 ## Verification
-
-| Check | Method | Expected |
-|-------|--------|----------|
-| Baseline creation | Run initial scan | Complete asset inventory stored |
-| Drift detection | Modify target (add subdomain) | Change detected on next cycle |
-| Risk scoring | Introduce high-risk change | Alert with severity and context |
-| False positive rate | Monitor stable target | No spurious alerts over 24h |
-| Historical tracking | Query change history | Timeline of all detected changes |
+- Introduce a test change (open new port) and verify detection within SLA
+- Confirm no false alerts on known maintenance windows
+- Validate CVE matching accuracy against manual NVD lookups
