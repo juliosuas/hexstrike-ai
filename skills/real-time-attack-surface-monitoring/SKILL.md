@@ -6,10 +6,14 @@ subdomain: vulnerability-management
 tags: [attack-surface, monitoring, continuous, real-time, exposure-management, certificates]
 version: "1.0"
 author: juliosuas
-license: MIT
+license: Apache-2.0
 ---
 
 # Real-Time Attack Surface Monitoring
+
+## Overview
+
+Real-Time Attack Surface Monitoring provides continuous visibility into an organization's external exposure using HexStrike MCP agents. By establishing a baseline of known assets and continuously scanning for deviations — new ports, DNS changes, certificate expirations, newly published CVEs affecting the stack — this skill enables proactive security posture management. The AI classifies each detected change as benign or suspicious, generates risk-scored alerts, and produces weekly drift reports showing how the attack surface evolved.
 
 ## When to Use
 - Ongoing security monitoring between formal assessments

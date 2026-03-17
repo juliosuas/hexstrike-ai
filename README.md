@@ -16,7 +16,7 @@
 [![AgentSkills](https://img.shields.io/badge/AgentSkills.io-Compatible-blueviolet.svg)](skills/)
 
 **Turn any MCP-compatible AI into a full-spectrum penetration testing machine.**  
-150+ security tools. 12+ autonomous agents. 12 agentskills.io skills. One unified platform.
+150+ security tools. 12+ autonomous agents. 13 agentskills.io skills. One unified platform.
 
 [⚡ Quick Start](#-quick-start) • [🏗️ Architecture](#architecture-overview) • [🛠️ Features](#features) • [🤖 AI Agents](#ai-agents) • [📡 API Reference](#api-reference) • [🗺️ Roadmap](#-roadmap)
 
@@ -600,8 +600,29 @@ Browse the full catalog in [`skills/`](skills/).
 | [Real-Time Attack Surface Monitoring](skills/real-time-attack-surface-monitoring/) | Monitoring | Continuous attack surface assessment with AI-driven change risk scoring |
 | [MCP Security Pipeline Builder](skills/mcp-security-pipeline-builder/) | DevSecOps | Build reusable security pipelines via natural language with CI/CD export |
 | [AI Vulnerability Prioritization](skills/ai-vulnerability-prioritization/) | Vuln Management | Context-aware vulnerability scoring beyond CVSS with business impact mapping |
+| [MCP Multi-Tool Security Orchestration](skills/mcp-multi-tool-security-orchestration/) | Automation | Orchestrate 150+ security tools via MCP with dependency graphs and adaptive re-planning |
 
 **What makes these unique:** Every skill leverages MCP multi-tool orchestration — capabilities that don't exist in traditional skill catalogs. The AI agent coordinates 5-10 tools simultaneously, shares context between them, and makes autonomous decisions about what to investigate next.
+
+---
+
+## 🤖 Skills & Agent Compatibility
+
+HexStrike AI skills are compatible with any agent or IDE that supports the [agentskills.io](https://agentskills.io) standard or MCP protocol. The table below shows tested compatibility:
+
+| Agent / IDE | Skills Discovery | MCP Tools | Autonomous Execution | Status |
+|-------------|:---:|:---:|:---:|:---:|
+| **Claude Code** | ✅ Native | ✅ Native | ✅ Full | Fully tested |
+| **GitHub Copilot (VS Code)** | ✅ Via MCP | ✅ Extension | ✅ Full | Fully tested |
+| **Cursor** | ✅ Via MCP | ✅ Built-in | ✅ Full | Fully tested |
+| **Gemini CLI** | ✅ SKILL.md | ⚠️ Via bridge | ⚠️ Partial | Community tested |
+| **Roo Code** | ✅ Via MCP | ✅ Built-in | ✅ Full | Fully tested |
+| **Windsurf** | ✅ SKILL.md | ✅ MCP | ✅ Full | Community tested |
+| **OpenAI Agents SDK** | ✅ Via adapter | ⚠️ Bridge | ⚠️ Partial | Community tested |
+| **LangChain / LangGraph** | ✅ Programmatic | ✅ MCP adapter | ✅ Full | Community tested |
+| **Custom FastMCP Client** | ✅ API | ✅ Native | ✅ Full | Full API access |
+
+> **Note:** "Skills Discovery" means the agent can read SKILL.md frontmatter to decide relevance. "MCP Tools" means it can invoke HexStrike's 150+ tools. "Autonomous Execution" means the agent can run multi-step workflows without human intervention.
 
 ---
 

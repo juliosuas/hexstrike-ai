@@ -6,10 +6,14 @@ subdomain: penetration-testing
 tags: [reconnaissance, ai-agent, autonomous, attack-surface, enumeration, osint]
 version: "1.0"
 author: juliosuas
-license: MIT
+license: Apache-2.0
 ---
 
 # AI Autonomous Reconnaissance
+
+## Overview
+
+AI Autonomous Reconnaissance deploys HexStrike's specialized AI agents to perform comprehensive target discovery and infrastructure mapping without human intervention. The agents intelligently select reconnaissance techniques based on target type, parallelize execution across multiple OSINT and active scanning tools, and build a correlated knowledge graph of discovered assets. Unlike manual recon workflows that require constant operator decisions, this skill enables the AI to autonomously determine scanning depth, pivot based on findings, and produce a complete attack surface map with confidence-scored results.
 
 ## When to Use
 - Initial engagement phase requiring broad target discovery
