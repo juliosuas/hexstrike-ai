@@ -16,7 +16,7 @@
 [![AgentSkills](https://img.shields.io/badge/AgentSkills.io-Compatible-blueviolet.svg)](skills/)
 
 **Turn any MCP-compatible AI into a full-spectrum penetration testing machine.**  
-150+ security tools. 12+ autonomous agents. 7 agentskills.io skills. One unified platform.
+150+ security tools. 12+ autonomous agents. 12 agentskills.io skills. One unified platform.
 
 [⚡ Quick Start](#-quick-start) • [🏗️ Architecture](#architecture-overview) • [🛠️ Features](#features) • [🤖 AI Agents](#ai-agents) • [📡 API Reference](#api-reference) • [🗺️ Roadmap](#-roadmap)
 
@@ -582,7 +582,7 @@ vulnerability scanning and web application testing..."
 
 ## 🧩 AgentSkills.io Compatible Skills
 
-HexStrike AI ships with **7 original cybersecurity skills** in the [agentskills.io](https://agentskills.io) standard format. Each skill uses YAML frontmatter for progressive discovery — AI agents read ~50 tokens of metadata to decide relevance, then load the full body on demand.
+HexStrike AI ships with **12 original cybersecurity skills** in the [agentskills.io](https://agentskills.io) standard format. Each skill uses YAML frontmatter for progressive discovery — AI agents read ~50 tokens of metadata to decide relevance, then load the full body on demand.
 
 Browse the full catalog in [`skills/`](skills/).
 
@@ -595,6 +595,11 @@ Browse the full catalog in [`skills/`](skills/).
 | [Threat Correlation](skills/realtime-threat-correlation/) | Threat Intel | Enrich findings with live threat intelligence for risk-weighted prioritization |
 | [Cloud Posture Scanner](skills/ai-cloud-posture-scanner/) | Cloud Security | Multi-cloud misconfiguration detection with AI exploitation reasoning |
 | [Social Engineering Analyzer](skills/mcp-social-engineering-analyzer/) | OSINT | Map organizational phishing and impersonation risk from public data |
+| [MCP Multi-Tool Orchestration](skills/mcp-multi-tool-orchestration/) | Automation | Orchestrate 150+ tools simultaneously with dependency resolution and cross-tool context |
+| [AI Autonomous Reconnaissance](skills/ai-autonomous-reconnaissance/) | Reconnaissance | Fully autonomous recon with adaptive depth control and knowledge graph construction |
+| [Real-Time Attack Surface Monitoring](skills/real-time-attack-surface-monitoring/) | Monitoring | Continuous attack surface assessment with AI-driven change risk scoring |
+| [MCP Security Pipeline Builder](skills/mcp-security-pipeline-builder/) | DevSecOps | Build reusable security pipelines via natural language with CI/CD export |
+| [AI Vulnerability Prioritization](skills/ai-vulnerability-prioritization/) | Vuln Management | Context-aware vulnerability scoring beyond CVSS with business impact mapping |
 
 **What makes these unique:** Every skill leverages MCP multi-tool orchestration — capabilities that don't exist in traditional skill catalogs. The AI agent coordinates 5-10 tools simultaneously, shares context between them, and makes autonomous decisions about what to investigate next.
 
